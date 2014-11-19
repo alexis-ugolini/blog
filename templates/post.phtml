@@ -1,0 +1,13 @@
+<h1>
+    <?= $post['title']; ?>
+</h1>
+<p>
+    Post créé le <?= date('d/m/Y', $date_crea); ?>
+    <?= $date_modif?', modifié le '.date('d/m/Y', $date_modif):''; ?>
+</p>
+<p>
+    <?= $post['content']; ?>
+</p>
+<p>
+    Auteur : <?= $post['user']; ?>
+</p>

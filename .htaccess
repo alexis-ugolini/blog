@@ -1,0 +1,7 @@
+<FilesMatch "\.ini">
+    Deny From All
+</FilesMatch>
+
+Options +FollowSymlinks
+RewriteEngine On
+RewriteRule	^post/([0-9]+)$	index.php?page=post&post=$1	[L]

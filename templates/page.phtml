@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <title><?= $post['title']; ?></title>
+        <link rel="stylesheet" href="../../normalize.css"/>
+        <link rel="stylesheet" href="../styles/style.css"/>
+        <?= file_exists('styles/'.$_GET['page'].'.css')?'<link rel="stylesheet" href="../styles/'.$_GET['page'].'.css"/>':''; ?>
+    </head>
+    <body>
+        <div>
+            <?php
+                if (file_exists('templates/'.$_GET['page'].'.phtml')) {
+                    include('templates/'.$_GET['page'].'.phtml');
+                }
+                else {
+                    echo "coucou";
+                }
+            ?>
+        </div>
+    </body>
+</html>
