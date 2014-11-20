@@ -6,7 +6,9 @@ class Helper_Database
     public function __construct()
     {
         $config = new Helper_Config('config.ini');
-        $this->pdo = new PDO("mysql:host=localhost;dbname={$config->get('dbname', 'database')}", "{$config->get('user', 'database')}", "{$config->get('password', 'database')}", array(PDO::MYSQL_ATTR_INIT_COMMAND=>'SET NAMES utf8'));
+        $this->pdo = new PDO("mysql:host=localhost;dbname={$config->get('dbname', 'database')}", "{$config->get('user', 'database')}", "{$config->get('password', 'database')}");
+        $this->pdo->exec('SET NAMES utf8');
+        $this->pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, FALSE);
     }
     function query($query, $args=array())
     {

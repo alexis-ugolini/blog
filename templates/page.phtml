@@ -2,21 +2,38 @@
 <html lang="fr">
     <head>
         <meta charset="UTF-8">
-        <title><?= $post['title']; ?></title>
-        <link rel="stylesheet" href="../../normalize.css"/>
-        <link rel="stylesheet" href="../styles/style.css"/>
-        <?= file_exists('styles/'.$_GET['page'].'.css')?'<link rel="stylesheet" href="../styles/'.$_GET['page'].'.css"/>':''; ?>
+        <title><?= $_pages[$_page]['title']; ?></title>
+        <link rel="stylesheet" href="<?= $_path; ?>../normalize.css"/>
+        <?php foreach($_pages[$_page]['styles'] as $style): ?>
+            <?php if(file_exists('styles/'.$style.'.css')): ?>
+                <link rel="stylesheet" href="<?= $_path; ?>styles/<?= $style; ?>.css"/>
+            <?php endif; ?>
+        <?php endforeach; ?>
+        <script src="../jquery-1.11.1.js"></script>
+        <?php foreach($_pages[$_page]['scripts'] as $script): ?>
+            <?php if(file_exists('scripts/'.$script.'.js')): ?>
+                <script type="text/javascript" src="<?= $_path; ?>scripts/<?= $script; ?>.js"></script>
+            <?php endif; ?>
+        <?php endforeach; ?>
     </head>
     <body>
         <div>
-            <?php
-                if (file_exists('templates/'.$_GET['page'].'.phtml')) {
-                    include('templates/'.$_GET['page'].'.phtml');
-                }
-                else {
-                    echo "coucou";
-                }
-            ?>
+            <h1>BLOG BLOG</h1>
+            <div class="content">
+                <?php
+                    if (file_exists('templates/'.$_page.'.phtml')) {
+                        include('templates/'.$_page.'.phtml');
+                    }
+                    else {
+                        echo "coucou";
+                    }
+                ?>
+            </div>
+            <div id="aside">
+                <?php
+                    include('templates/connect.phtml');
+                ?>
+            </div>
         </div>
     </body>
 </html>

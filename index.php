@@ -10,13 +10,31 @@ function my_autoload($class) {
     }
 }
 spl_autoload_register('my_autoload');
-if (isset($_GET['page']) && !empty($_GET['page'])) {
-    if (file_exists('pages/'.$_GET['page'].'.php')) {
-        $page = 'pages/'.$_GET['page'].'.php';
-    }
-    else {
-        $page = 'pages/page.php';
-    }
+
+$_user = array();
+if (isset($_SERVER['user']) && !empty($_SERVER['user']) && is_int($_SERVER['user'])) {
+    $_users = new Model_User;
+    $_user = $_users->getUser();
 }
-include($page);
+
+$_page = (isset($_GET['page']) && !empty($_GET['page']) && file_exists('pages/'.$_GET['page'].'.php'))?$_GET['page']:'accueil';
+include('pages/'.$_page.'.php');
+
+$_pages = array(
+    'accueil' => array(
+        'title'=>'Blog blog',
+        'styles'=>array('style', 'post'),
+        'scripts'=>array('accueil')
+    ),
+    'post' => array(
+        'title'=>@$post['title'],
+        'styles'=>array('style', 'post'),
+        'scripts'=>array('accueil')
+    )
+);
+$_p = count(explode('/', $_SERVER['REQUEST_URI']))-count(explode('/', $_SERVER['PHP_SELF']));
+$_path = '';
+for ($i=0; $i<$_p; $i++) {
+    $_path .= '../';
+}
 include('templates/page.phtml');

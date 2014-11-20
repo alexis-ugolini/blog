@@ -1,0 +1,17 @@
+<?php
+    var_dump($_POST);
+?>
+<?php if(count($_user)): ?>
+    <?php var_dump($_user); ?>
+<?php else: ?>
+    <input id="name" type="text" value="Username"/>
+    <br/>
+    <input id="pass" type="text" value="Password"/>
+    <br/>
+    <button id="inscrire">Connexion</button>
+    <script>
+        $(function(){
+            $('#inscrire').click(function(){connect();});
+        });
+    </script>
+<?php endif; ?>
