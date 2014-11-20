@@ -1,21 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2ebea06a-a3d3-4b0e-a759-3a44c5694d81" name="Default" comment="jour 2">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Model/User.class.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/classes/User.class.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/accueil.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/accueil.phtml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/connect.phtml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pages/page.php" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Helper/Database.class.php" afterPath="$PROJECT_DIR$/Helper/Database.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Model/Post.class.php" afterPath="$PROJECT_DIR$/Model/Post.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/page.phtml" afterPath="$PROJECT_DIR$/templates/page.phtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/styles/post.css" afterPath="$PROJECT_DIR$/styles/post.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/post.php" afterPath="$PROJECT_DIR$/pages/post.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/post.phtml" afterPath="$PROJECT_DIR$/templates/post.phtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/styles/style.css" afterPath="$PROJECT_DIR$/styles/style.css" />
+    <list default="true" id="2ebea06a-a3d3-4b0e-a759-3a44c5694d81" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pages/accueil.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="blog.iws" />
@@ -377,6 +364,11 @@
       <created>1416402383773</created>
       <updated>1416402383773</updated>
     </task>
+    <task id="LOCAL-00001" summary="jour 2">
+      <created>1416503503593</created>
+      <updated>1416503503593</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
